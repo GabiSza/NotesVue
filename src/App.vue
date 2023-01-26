@@ -31,16 +31,18 @@ const addNote = () => {
     <div v-if="showModal" class="overlay">
       <div class="modal">
         <p @click="showModal = false">x</p>
-        <textarea v-model="newNote"/>
+        <textarea v-model="newNote"></textarea>
         <p class="errormsg" v-if="errorMessage">{{ errorMessage }}</p>
         <button @click="addNote">Add Note</button>
       </div>
     </div>
+
     <div class="container">
       <header>
         <h1>Notes</h1>
         <button @click="showModal = true">+</button>
       </header>
+
       <div class="cards-container">
         <div v-for="note in notes" class="card" :style="{backgroundColor: note.color}">
           <p class="main-text">{{ note.text }}</p>
@@ -163,5 +165,6 @@ const addNote = () => {
   }
   .errormsg {
     color: red;
+    border: 0vmax;
   }
 </style>
